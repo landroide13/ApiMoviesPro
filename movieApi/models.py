@@ -39,7 +39,12 @@ class Rating(models.Model):
         return self.movie
 
 
+class CustomerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birth_date = models.DateField(null=True, blank=True)
 
+    def __str__(self) -> str:
+        return self.user.username
 
 
 

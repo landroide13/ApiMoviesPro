@@ -3,8 +3,8 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
-from .models import Movie, Rating
-from .serializer import MovieSerializer, RatingSerializer
+from .models import CustomerProfile, Movie, Rating
+from .serializer import CustomerSerializer, MovieSerializer, RatingSerializer
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -57,7 +57,9 @@ class RatingViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
 
-
+class CustomerViewSet(viewsets.ModelViewSet):
+    queryset = CustomerProfile.objects.all()
+    serializer_class = CustomerSerializer
 
 
 
