@@ -6,7 +6,7 @@ from movieApi.views import CustomerViewSet, MovieViewSet, RatingViewSet
 router = routers.DefaultRouter()
 router.register('movies', MovieViewSet)
 router.register('ratings', RatingViewSet)
-router.register('customer', CustomerViewSet)
+router.register('customers', CustomerViewSet)
 
 
 urlpatterns = [
