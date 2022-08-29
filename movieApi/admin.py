@@ -22,4 +22,3 @@ class MovieAdmin(admin.ModelAdmin):
 
 
 
-
