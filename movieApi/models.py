@@ -47,8 +47,8 @@ class Rating(models.Model):
         unique_together = (('user', 'movie'),)
         index_together = (('user', 'movie'),)
 
-    def __str__(self) -> str:
-        return self.movie
+    def __int__(self) -> int:
+        return self.stars
 
 class CommentMovie(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
@@ -59,7 +59,7 @@ class CommentMovie(models.Model):
         index_together = (('user', 'movie'),)
 
     def __str__(self) -> str:
-        return self.movie
+        return self.comments
 
 
 

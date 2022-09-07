@@ -63,7 +63,7 @@ class MovieViewSet(viewsets.ModelViewSet):
                 return Response(response, status=status.HTTP_200_OK)
 
             except:
-                comment = CommentMovie.objects.create(user=user, movie=movie, stars=stars)
+                comment = CommentMovie.objects.create(user=user, movie=movie, comments=comments)
 
                 serializer = CommentSerializer(comment, many=False)    
                 response = {'message': 'Comment Created..', 'result': serializer.data}
